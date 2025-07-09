@@ -83,6 +83,12 @@ p {
   padding: 1em;
 }
 
+a {
+  font-family: var(--paragraph-font);
+  color: var(--paragraph-color-on-white);
+  padding: 1em;
+}
+
 nav {
   background-color: var(--nav-background-color);
   line-height: 3em;
@@ -175,23 +181,25 @@ nav a:hover {
 
 
 footer {
-    color: #F4F4F4;
-    padding: 25px 50px;
-    text-decoration: none;
-    margin-top: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  color: #F4F4F4;
+  padding: 25px 50px;
+  text-decoration: none;
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
 }
 
-footer p {
-    color: #F4F4F4;
-    text-decoration: none;
+footer a {
+  color: #F4F4F4;
+  text-decoration: none;
+  justify-content: center;
 }
 
-footer p:hover {
-    color: #1B9CFC;
-    text-decoration: underline;
+footer a:hover {
+  color: #1B9CFC;
+  text-decoration: underline;
 }
 
 #fb, #t, #i {
@@ -210,9 +218,11 @@ footer p:hover {
 .characters-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 4em;
 }
 
 #characters-hero-img {
+  margin-top: 2em;
   grid-column-start: 2;
   grid-row-start: 1;
   width: 100%;
@@ -232,32 +242,64 @@ footer p:hover {
 .characters-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2em;
+  gap: 4em;
   padding: 2em;
   padding-top: 1em;
 }
 
-.card {
-  
-  border: 10px solid white;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-  text-align: center;
-  box-shadow: 5px 5px 10px #6f7364;
-  transition: transform .5s;
+.card h2 {
+  margin-top: 1em;
+}
+
+.card h4 {
+  margin-top: 1em;
 }
 
 .card-img {
+  margin-top: 1em;
   max-width: 100%;
-  height: auto;
+  height: 450px;
   align-self: center;
   justify-content: center;
 }
 
-.card:hover {
-  opacity: .6;
-  transform: scale(1.1);
+.card {
+  background-color: transparent;
+  width: 400px;
+  height: 600px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 1px solid #f1f1f1;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: black;
+}
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .luke-card {
@@ -378,4 +420,62 @@ button {
   padding: .5em;
   /* make this element invisible until we are ready for it */
   display: none;      
+}
+
+@media screen and (max-width: 900px) {
+    #hero, .home-grid {
+        display: block;
+        height: auto;
+    }
+
+    nav, footer {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        padding: 15px;
+    }
+
+    .characters-grid {
+      grid-template-columns: 1fr; /* Stack cards vertically */
+    }
+
+    .card {
+      width: 90%;       /* Optional: makes the card more responsive */
+      margin: 0 auto;    /* Center it */
+    }
+
+    .luke-card,
+    .han-card,
+    .leia-card,
+    .obi-card,
+    .vader-card,
+    .emperor-card {
+      grid-column: auto !important;
+      grid-row: auto !important;
+    }
+    #hero {
+        margin-top: 0;
+    }
+
+    #hero-msg {
+        margin-top: 0;
+    }
+
+    #hero-msg h4 {
+        display: none;
+    }
+
+    #hero-msg h1 {
+        color: #6f7364;
+    }
+
+    .home-title {
+        font-size: 25px;
+    }
+
+    footer {
+        margin-top: 25px;
+    }
 }
