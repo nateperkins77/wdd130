@@ -253,6 +253,8 @@ footer a:hover {
 
 .card h4 {
   margin-top: 1em;
+  color: #1B9CFC;
+  font-size: 1.25em;
 }
 
 .card-img {
@@ -357,6 +359,71 @@ footer a:hover {
 }
 
 /* Timeline Subpage */
+
+.timeline-hero-msg {
+  margin: 15em;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.timeline-hero-msg h4 {
+  margin-top: 2em;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 5em auto;
+  padding: 2em 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: #D72638;
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2em 0;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: -5%;
+}
+
+.timeline-item.right {
+  left: 55%;
+  justify-content: flex-start;
+}
+
+.timeline-content {
+  background-color: black;
+  border: 1px solid white;
+  padding: 1.5em;
+  border-radius: 10px;
+  width: 90%;
+  color: white;
+  text-align: left;
+}
+
+.timeline-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
 
 /* Contact Us Page */
 
