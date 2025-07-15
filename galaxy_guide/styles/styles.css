@@ -366,7 +366,6 @@ footer a:hover {
   margin-bottom: 3em;
   text-align: center;
   justify-content: center;
-  align-content: center;
 }
 
 .timeline-hero-msg h4 {
@@ -433,6 +432,10 @@ footer a:hover {
   font-size: 2em;
 }
 
+#content {
+  text-align: center;
+}
+
 form {
   margin-top: 1%;
   display: inline-block;
@@ -485,64 +488,80 @@ button {
   left: 0;
   right: 0;
   padding: .5em;
-  /* make this element invisible until we are ready for it */
   display: none;      
 }
 
 @media screen and (max-width: 900px) {
-    #hero, .home-grid {
-        display: block;
-        height: auto;
-    }
+  #hero, .home-grid {
+      display: block;
+      height: auto;
+  }
 
-    nav, footer {
-        flex-direction: column;
-    }
+  nav, footer {
+      flex-direction: column;
+  }
 
-    nav a {
-        display: block;
-        padding: 15px;
-    }
+  nav a {
+      display: block;
+      padding: 15px;
+  }
 
-    .characters-grid {
-      grid-template-columns: 1fr; /* Stack cards vertically */
-    }
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .card {
-      width: 90%;       /* Optional: makes the card more responsive */
-      margin: 0 auto;    /* Center it */
-    }
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
 
-    .luke-card,
-    .han-card,
-    .leia-card,
-    .obi-card,
-    .vader-card,
-    .emperor-card {
-      grid-column: auto !important;
-      grid-row: auto !important;
-    }
-    #hero {
-        margin-top: 0;
-    }
+  .luke-card,
+  .han-card,
+  .leia-card,
+  .obi-card,
+  .vader-card,
+  .emperor-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  #hero {
+      margin-top: 0;
+  }
 
-    #hero-msg {
-        margin-top: 0;
-    }
+  #hero-msg {
+      margin-top: 0;
+  }
 
-    #hero-msg h4 {
-        display: none;
-    }
+  #hero-msg h4 {
+      display: none;
+  }
 
-    #hero-msg h1 {
-        color: #6f7364;
-    }
+  #hero-msg h1 {
+      color: #6f7364;
+  }
 
-    .home-title {
-        font-size: 25px;
-    }
+  .home-title {
+      font-size: 25px;
+  }
 
-    footer {
-        margin-top: 25px;
-    }
+  footer {
+      margin-top: 25px;
+  }
+
+  .timeline-hero-msg {
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+  }
+
+  .timeline-hero-msg h1 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .timeline-hero-msg h4 {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 0 1em;
+  }
 }
